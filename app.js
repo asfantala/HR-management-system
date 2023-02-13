@@ -36,12 +36,13 @@ Employee.prototype.render = function() {
     const employeeContainer = document.createElement('div');
     employeeContainer.classList.add('employee');
     employeeContainer.innerHTML = `
-        <img src="${this.imageUrl}" alt="Employee Image">
+        <img src="${this.image}" alt="Employee Image">
         <h2>${this.name}</h2>
         <p>Salary: $${this.netSalary}</p>
     `;
-    document.querySelector('.main').appendChild(employeeContainer);
-};
+const container = document.getElementById("employee-info");
+console.log(container);
+  };
 
 
 const employees = [
@@ -55,6 +56,8 @@ const employees = [
 ];
 
 employees.forEach(employee => {
-    employee.calculateSalary();
+  employee.calculateSalary();
     employee.render();
 });
+console.log(employees);
+
