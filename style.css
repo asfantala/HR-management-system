@@ -1,0 +1,57 @@
+
+* {
+    font-family: 'Righteous', cursive;
+}
+
+body {
+    background-color: #F0EEED;
+   
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    background-color: #609EA2;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+}
+
+h2 {
+    background-color: #E3DFFD;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+div {
+    background-color: #C92C6D
+
+}
+footer {
+background-color: #332C39;
+list-style-type: none;
+ padding: 10px;
+text-align: center;
+    
+  }
+  ul {
+    list-style-type: none;
+    font-size: small;
+}
+img {
+    margin:44px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 4px 6px 0 rgb(34 60 80 / 16%);
+    transition: all ease-in-out .2s;
+    
+}
+
