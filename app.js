@@ -1,19 +1,18 @@
 'use strict'
-function Employee (id, name, department, level, image, salary) {
-    this.id = id;
+function Employee ( name, department, level, image) {
+    this.id = this.idNumber();
     this.name = name;
     this.department = department;
     this.level = level;
     this.image = image;
-    this.salary = salary;
-this.netSalary=0;  }
+this.netSalary=this.calculateSalary();  }
 
 
 
 
 Employee.prototype.idNumber =function (){
     
-        this.id = uniqueId;
+        this.id = uniqueId();
         return this.id;
       
     }
@@ -23,10 +22,12 @@ function uniqueId (){
 
 }
 
-console.log(uniqueId());
+// console.log(uniqueId());
 
 Employee.prototype.calculateSalary = function() {
-    let min, max;
+    let min, max =0;
+    let salary=0;
+    let netSalary=0;
     switch (this.level) {
         case 'Senior':
             min = 1500;
@@ -41,11 +42,13 @@ Employee.prototype.calculateSalary = function() {
             max = 1000;
             break;
         default:
+            min = 1000;
+            max = 1500;
             break;
     }
-    this.salary = Math.floor(Math.random() * (max - min + 1) + min);
-    this.netSalary = this.salary - (this.salary * 7.5 / 100);
-    return this.netSalary;
+      salary = Math.floor(Math.random() * (max - min ) + min);
+      netSalary = salary - (salary * 7.5 / 100);
+    return netSalary;
 };
 
 Employee.prototype.render = function() {
@@ -65,23 +68,25 @@ imgEl.height="150";
 
 const employeeName =document.createElement('h4');
 divEl.appendChild(employeeName);
-employeeName.textContent="Name:"+this.name;
+employeeName.textContent="Name:"+this.name +"-ID:"+`${this.id} `;
+
+
 
 const idEl =document.createElement('h4');
 divEl.appendChild(idEl);
-idEl.textContent="ID:"+this.id;
+// idEl.textContent="ID:"+this.id;
 
 const departmentEl =document.createElement('p');
 divEl.appendChild(departmentEl);
-departmentEl.textContent="Department:";
+departmentEl.textContent="Department:"+`${this.department}`+"-level:"+`${this.level}`;
 
 const levelEl =document.createElement('p');
 divEl.appendChild(levelEl);
-levelEl.textContent="level:"+this.level;
+// levelEl.textContent="level:"+this.level;
 
 const salaryEl =document.createElement('p');
 divEl.appendChild(salaryEl);
-salaryEl.textContent= this.netSalary;
+salaryEl.textContent= `${this.netSalary}`;
  
 
 const hrEl = document.createElement('hr');
@@ -92,13 +97,12 @@ employeeForm.addEventListener('submit', addEmployee);
 
 function addEmployee (event){
     event.preventDefault();
-    console.log(event);
+    // console.log(event);
 // let id =event.target.id.value;
 let name =event.target.fullname.value;
 let department=event.target.department.value;
 let level =event.target.level.value;
 let image =event.target.ImageUrl.value;
-// let salary =event.target.salary.value;
 
 
 

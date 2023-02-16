@@ -24,14 +24,28 @@ nav ul {
 
 h2 {
     background-color: #E3DFFD;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
 
 }
 div {
-    background-color: #C92C6D
+    background-color: #C92C6D;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+    border:solid #609EA2;
+
+
+}
+
+#employeesSection{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
 }
 footer {
