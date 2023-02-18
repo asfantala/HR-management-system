@@ -129,19 +129,11 @@ let jsonArr = JSON.stringify(employeeArr);
 localStorage.setItem("allemployee",jsonArr);
 render();
 
-//store the data 
-// let jsonObj = JSON.stringify(newEmployee);
-// localStorage.setItem("employee",jsonObj);
-// console.log(jsonObj);
-
 }
 
 //retrieve the data 
 function getEmployee(){
 
-    // let employees = localStorage.getItem("employee");
-    // let retData =JSON.parse(employees);
-    // console.log(retData);
     let allEmployee = localStorage.getItem("allemployee");
     employeeArr= JSON.parse(allEmployee);
 
@@ -150,7 +142,7 @@ function getEmployee(){
 getEmployee();
 render();
 
-
+export{employeeArr};
 
 // Employee.prototype.render = function() {
 // console.log(`${this.name}`);

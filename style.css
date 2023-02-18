@@ -69,3 +69,12 @@ img {
     
 }
 
+th, td {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #FF5F9E;
+  }
+table {
+
+    width :100%;
+}
