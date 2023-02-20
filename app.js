@@ -105,7 +105,7 @@ for (let i=0 ; i<employeeArr.length; i++){
 }
 
 }
-let employeeForm = document.getElementById("Employee ID");
+let employeeForm = document.getElementById("employeeId");
 employeeForm.addEventListener('submit', addEmployee);
 
 function addEmployee (event){
@@ -142,7 +142,8 @@ function getEmployee(){
 getEmployee();
 render();
 
-export{employeeArr};
+
+// export{employeeArr};
 
 // Employee.prototype.render = function() {
 // console.log(`${this.name}`);
